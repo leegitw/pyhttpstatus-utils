@@ -19,9 +19,9 @@ name = {
     204: 'No Content',
     205: 'Reset Content',
     206: 'Partial Content',
-    207: 'Multi-HttpStatus',        # WebDAV; RFC 4918
-    208: "Already Reported",    # WebDAV; RFC 5842
-    226: "IM Used",             # RFC 3229
+    207: 'Multi-HttpStatus',  # WebDAV; RFC 4918
+    208: "Already Reported",  # WebDAV; RFC 5842
+    226: "IM Used",  # RFC 3229
 
     # Redirection
     300: 'Multiple Choices',
@@ -30,7 +30,7 @@ name = {
     303: 'See Other',
     304: 'Not Modified',
     305: 'Use Proxy',
-    306: 'Switch Proxy',        # HTTP/1.1 No longer used
+    306: 'Switch Proxy',  # HTTP/1.1 No longer used
     307: 'Temporary Redirect',
     308: 'Permanent Redirect',  # Approved as experimental RFC http://en.wikipedia.org/wiki/Request_for_Comments
 
@@ -53,26 +53,26 @@ name = {
     415: 'Unsupported Media Type',
     416: 'Requested Range Not Satisfiable',
     417: 'Expectation Failed',
-    418: 'I\'m a Teapot',               # RFC 2324 April Fool's Joke
-    419: 'Authentication Timeout',      # RFC 2616 not part of HTTP standard
-    422: 'Unprocessable Entity',        # WebDAV; RFC 4918
-    423: 'Locked',                      # WebDAV; RFC 4918
-    424: 'Failed Dependency',           # WebDAV; RFC 4918
-    425: 'Unordered Collection',        # Defined in drafts of "WebDAV Advanced Collections Protocol"
-    426: 'Upgrade Required',            # RFC 2817
-    428: 'Precondition Required',       # RFC 6585 http://tools.ietf.org/html/rfc6585
-    429: 'Too Many Requests',           # RFC 6585 http://tools.ietf.org/html/rfc6585
-    431: 'Header Fields Too Large',     # RFC 6585 http://tools.ietf.org/html/rfc6585
-    440: 'Login Timeout',               # Microsoft
-    444: 'No Response',                 # Nginx
-    449: 'Retry With',                  # Microsoft
-    450: 'Blocked By Windows Parental Controls',    # Microsoft
-    451: 'Unavailable For Legal Reasons',           # Internet Draft http://en.wikipedia.org/wiki/HTTP_451
-    494: 'Request Header Too Large',    # Nginx
-    495: 'Cert Error',                  # Nginx
-    496: 'No Cert',                     # Nginx
-    497: 'HTTP to HTTPS',               # Nginx
-    499: 'Client Closed Request',       # Nginx
+    418: 'I\'m a Teapot',  # RFC 2324 April Fool's Joke
+    419: 'Authentication Timeout',  # RFC 2616 not part of HTTP standard
+    422: 'Unprocessable Entity',  # WebDAV; RFC 4918
+    423: 'Locked',  # WebDAV; RFC 4918
+    424: 'Failed Dependency',  # WebDAV; RFC 4918
+    425: 'Unordered Collection',  # Defined in drafts of "WebDAV Advanced Collections Protocol"
+    426: 'Upgrade Required',  # RFC 2817
+    428: 'Precondition Required',  # RFC 6585 http://tools.ietf.org/html/rfc6585
+    429: 'Too Many Requests',  # RFC 6585 http://tools.ietf.org/html/rfc6585
+    431: 'Header Fields Too Large',  # RFC 6585 http://tools.ietf.org/html/rfc6585
+    440: 'Login Timeout',  # Microsoft
+    444: 'No Response',  # Nginx
+    449: 'Retry With',  # Microsoft
+    450: 'Blocked By Windows Parental Controls',  # Microsoft
+    451: 'Unavailable For Legal Reasons',  # Internet Draft http://en.wikipedia.org/wiki/HTTP_451
+    494: 'Request Header Too Large',  # Nginx
+    495: 'Cert Error',  # Nginx
+    496: 'No Cert',  # Nginx
+    497: 'HTTP to HTTPS',  # Nginx
+    499: 'Client Closed Request',  # Nginx
 
     # Server Error.
     500: 'Internal Server Error',
@@ -81,12 +81,12 @@ name = {
     503: 'Service Unavailable',
     504: 'Gateway Timeout',
     505: 'HTTP Version Not Supported',
-    506: 'Variant Also Negotiates',     # RFC 2295
-    507: 'Insufficient Storage',        # WebDAV; RFC 4918
-    508: 'Loop Detected',               # WebDAV; RFC 5842
-    509: 'Bandwidth Limit Exceeded',    # Apache bw/limited extension
-    510: 'Not Extended',                # RFC 2774
-    511: 'Network Authentication'       # RFC 6585
+    506: 'Variant Also Negotiates',  # RFC 2295
+    507: 'Insufficient Storage',  # WebDAV; RFC 4918
+    508: 'Loop Detected',  # WebDAV; RFC 5842
+    509: 'Bandwidth Limit Exceeded',  # Apache bw/limited extension
+    510: 'Not Extended',  # RFC 2774
+    511: 'Network Authentication'  # RFC 6585
 }
 
 # Descriptions of HTTP status codes.
@@ -105,10 +105,14 @@ description = {
     205: 'Server successfully processed the request, but is not returning any content.',
     206: 'Download is separated into multiple streams, due to range header.',
     207: 'Message body that follows is an XML message and can contain a number of separate response codes.',
-    208: ('Response is a representation of the result of one or more instance-manipulations applied to the current ' +
-          'instance.'),
-    226: ('The server has fulfilled a GET request for the resource, and the response is a representation of the ' +
-          'result of one or more instance-manipulations applied to the current instance.'),
+    208: (
+        'Response is a representation of the result of one or more instance-manipulations applied to the current ' +
+        'instance.'
+    ),
+    226: (
+        'The server has fulfilled a GET request for the resource, and the response is a representation of the ' +
+        'result of one or more instance-manipulations applied to the current instance.'
+    ),
 
     # Redirection.
     300: 'Request has more than one possible response.',
@@ -128,7 +132,8 @@ description = {
     403: 'Client does not have rights to access the content.',
     404: 'Server cannot find requested resource.',
     405: 'Server has disabled this request method and cannot be used.',
-    406: 'Requested resource is only capable of generating content not acceptable according to the Accept headers sent.',
+    406:
+    'Requested resource is only capable of generating content not acceptable according to the Accept headers sent.',
     407: 'Authentication by a proxy is needed to access the given resource.',
     408: 'Server would like to shut down this unused connection.',
     409: 'Request could not be processed because of conflict in the request, such as an edit conflict.',
@@ -153,8 +158,10 @@ description = {
     444: 'Server has returned no information to the client and closed the connection (Ngnix).',
     449: 'Request should be retried after performing the appropriate action (Microsoft).',
     450: 'Windows Parental Controls are turned on and are blocking access to the given webpage.',
-    451: ('You attempted to access a Legally-restricted Resource. This could be due to censorship or ' +
-          'government-mandated blocked access.'),
+    451: (
+        'You attempted to access a Legally-restricted Resource. This could be due to censorship or ' +
+        'government-mandated blocked access.'
+    ),
     494: 'Nginx internal code',
     495: 'SSL client certificate error occurred. (Nginx)',
     496: 'Client did not provide certificate (Nginx)',

@@ -3,7 +3,7 @@
 #  @namespace pyhttpstatus_utils
 
 __title__ = 'pyhttpstatus-utils'
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 __build__ = 0x000100
 __version_info__ = tuple(__version__.split('.'))
 

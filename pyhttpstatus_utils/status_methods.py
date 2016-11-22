@@ -17,13 +17,7 @@ class InvalidHttpCode(Exception):
     pass
 
 
-def validate_http_code(
-    http_code,
-    minimum=100,
-    maximum=599,
-    strict=True,
-    default_http_code=0
-):
+def validate_http_code(http_code, minimum=100, maximum=599, strict=True, default_http_code=0):
     """Make sure http_code is valid. If strict, throw, else just return default_http_code."""
     try:
         http_code = int(http_code)
@@ -46,9 +40,7 @@ def validate_http_code(
     return http_code
 
 
-def http_status_dict(
-    override_dict=None
-):
+def http_status_dict(override_dict=None):
     """HTTP Status Dictionary with Overrides if provided.
 
     Args:
@@ -57,9 +49,7 @@ def http_status_dict(
     Returns:
 
     """
-    dict_ = copy.deepcopy(
-        http_status_codes
-    )
+    dict_ = copy.deepcopy(http_status_codes)
 
     if override_dict and isinstance(override_dict, dict) and len(override_dict) > 0:
         for key, value in override_dict.items():
@@ -67,16 +57,12 @@ def http_status_dict(
                 http_status = dict_[key].rstrip('\.')
                 dict_[key] = "{}: {}".format(http_status, value).rstrip('\.') + '.'
             else:
-                dict_.update({
-                    key: value
-                })
+                dict_.update({key: value})
 
     return dict_
 
 
-def http_status_code_to_desc(
-    http_status_code
-):
+def http_status_code_to_desc(http_status_code):
     """Get HTTP status code description.
 
     Args:
@@ -92,9 +78,7 @@ def http_status_code_to_desc(
     return http_status_desc[http_status_code]
 
 
-def http_status_code_to_type(
-    http_status_code
-):
+def http_status_code_to_type(http_status_code):
     """Get HTTP Status Code Type
 
     Args:
@@ -109,10 +93,7 @@ def http_status_code_to_type(
     return http_status_types[http_status_code_base]
 
 
-def is_http_status_type(
-    http_status_code,
-    http_status_type
-):
+def is_http_status_type(http_status_code, http_status_type):
     """Match if provided HTTP Status Code is expected
     HTTP Status Code Type.
 
@@ -126,9 +107,7 @@ def is_http_status_type(
     return http_status_code_to_type(http_status_code) == http_status_type
 
 
-def is_http_status_successful(
-    http_status_code
-):
+def is_http_status_successful(http_status_code):
     """Check if HTTP Status Code is type Successful
 
     Args:
@@ -138,7 +117,4 @@ def is_http_status_successful(
     Returns:
 
     """
-    return is_http_status_type(
-        http_status_code=http_status_code,
-        http_status_type=HttpStatusType.SUCCESSFUL
-    )
+    return is_http_status_type(http_status_code=http_status_code, http_status_type=HttpStatusType.SUCCESSFUL)
