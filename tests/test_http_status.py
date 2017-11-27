@@ -1,11 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-#  @copyright 2016 TUNE, Inc. (http://www.tune.com)
+#  @copyright 2017 TUNE, Inc. (http://www.tune.com)
 
 from collections import defaultdict
-
-from pprintpp import pprint
-
 from pyhttpstatus_utils import http_status_dict
 
 
