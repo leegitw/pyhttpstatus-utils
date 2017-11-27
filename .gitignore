@@ -5,8 +5,13 @@
 .project
 .settings/
 .pydevproject
+.python-version
 .idea
 .dartignore
+
+.sw*
+*.vim
+*.zip
 
 # Code build files
 *.egg-info/
@@ -15,3 +20,16 @@ __pycache__/
 pyhttpstatus_utils/__pycache__/
 pyhttpstatus_utils/helpers/__pycache__/
 *.pyc
+
+_tmp/
+
+
+# pytest
+.cache/*
+/htmlcov/
+/.coverage
+
+# distribution
+.eggs/*
+dist/*
+

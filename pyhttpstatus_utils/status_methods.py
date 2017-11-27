@@ -18,7 +18,7 @@ class InvalidHttpCode(Exception):
 
 
 def validate_http_code(http_code, minimum=100, maximum=599, strict=True, default_http_code=0):
-    """Make sure http_code is valid. If strict, throw, else just return default_http_code."""
+    """Validate HTTP code. If strict, throw, else just return default_http_code."""
     try:
         http_code = int(http_code)
     except:
