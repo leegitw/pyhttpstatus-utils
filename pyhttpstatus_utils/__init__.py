@@ -3,12 +3,12 @@
 #  @namespace pyhttpstatus_utils
 
 __title__ = 'pyhttpstatus-utils'
-__version__ = '0.1.1'
-__build__ = 0x000100
+__version__ = '0.1.3'
+__build__ = 0x000103
 __version_info__ = tuple(__version__.split('.'))
 
 __author__ = 'jefft@tune.com'
-__license__ = 'Apache 2.0'
+__license__ = 'MIT License'
 
 __python_required_version__ = (3, 0)
 
@@ -23,5 +23,6 @@ from .status_methods import (
     http_status_code_to_desc,
     http_status_code_to_type,
     is_http_status_type,
-    is_http_status_successful
+    is_http_status_successful,
+    validate_http_code
 )
