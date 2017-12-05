@@ -14,8 +14,8 @@ Badges
 .. list-table::
     :stub-columns: 1
 
-    * - docs
-      - |license|
+    * - info
+      - |license| |hits| |contributors|
     * - tests
       - |travis| |coveralls|
     * - package
@@ -24,6 +24,14 @@ Badges
 .. |docs| image:: https://readthedocs.org/projects/pyhttpstatus-utils/badge/?style=flat
     :alt: Documentation Status
     :target: https://readthedocs.org/projects/pyhttpstatus-utils
+
+.. |hits| image:: http://hits.dwyl.io/TuneLab/pyhttpstatus-utils.svg
+    :alt: Hit Count
+    :target: http://hits.dwyl.io/TuneLab/pyhttpstatus-utils
+
+.. |contributors| image:: https://img.shields.io/github/contributors/TuneLab/pyhttpstatus-utils.svg
+    :alt: Contributors
+    :target: https://github.com/TuneLab/pyhttpstatus-utils/graphs/contributors
 
 .. |license| image:: https://img.shields.io/badge/License-MIT-yellow.svg
     :alt: License Status
