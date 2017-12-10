@@ -1,7 +1,14 @@
-.. -*- mode: rst -*-
 
 pyhttpstatus-utils
-------------------
+==================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+
+Introduction
+------------
 
 Extension of Python Standard Library's `http.HTTPStatus <https://docs.python.org/3/library/http.html>`_ providing mapping of HTTP statuses.
 
