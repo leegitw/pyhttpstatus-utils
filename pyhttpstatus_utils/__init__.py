@@ -3,8 +3,7 @@
 #  @namespace pyhttpstatus_utils
 
 __title__ = 'pyhttpstatus-utils'
-__version__ = '0.2.0'
-__build__ = 0x000200
+__version__ = '0.2.2'
 __version_info__ = tuple(__version__.split('.'))
 
 __author__ = 'jefft@tune.com'
