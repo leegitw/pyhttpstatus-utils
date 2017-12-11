@@ -76,3 +76,16 @@ class TestHttpStatus():
                 )
 
                 assert(type(http_status_success) is bool)
+
+    def test_http_status_codes_list(self):
+        _http_status_codes_list = [
+            pyhttpstatus_utils.HttpStatusCode.BAD_GATEWAY,
+            pyhttpstatus_utils.HttpStatusCode.SERVICE_UNAVAILABLE,
+            pyhttpstatus_utils.HttpStatusCode.GATEWAY_TIMEOUT,
+            pyhttpstatus_utils.HttpStatusCode.TOO_MANY_REQUESTS
+        ]
+        http_status_codes_list = list(map(int, _http_status_codes_list))
+
+        assert(type(http_status_codes_list) is list)
+        for http_status_code in http_status_codes_list:
+            assert(type(http_status_code) is int)
