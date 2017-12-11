@@ -6,10 +6,11 @@ from collections import defaultdict
 
 from pprintpp import pprint
 
-from pyhttpstatus_utils import http_status_dict
+import pyhttpstatus_utils
+
 
 _http_status_dict = defaultdict(
-    lambda: 'partner returned non-200 status code', http_status_dict({
+    lambda: 'partner returned non-200 status code', pyhttpstatus_utils.http_status_dict({
         401: 'Invalid api_key'
     })
 )

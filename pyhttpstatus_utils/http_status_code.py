@@ -4,9 +4,9 @@
 """
 HTTP Status Codes
 """
+import enum
 
-
-class HttpStatusCode(object):
+class HttpStatusCode(enum.IntEnum):
     """HTTP Status Codes
     """
 
