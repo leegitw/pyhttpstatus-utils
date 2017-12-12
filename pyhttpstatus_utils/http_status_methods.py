@@ -7,11 +7,13 @@ HTTP Status Codes and Support Functions.
 
 import copy
 
-from .status_dicts import name as http_status_codes
-from .status_dicts import description as http_status_desc
-from .status_dicts import type as http_status_types
-from .status_type import HttpStatusType
+from .http_status_dicts import (
+    HTTP_STATUS_CODE_TO_PHRASE,
+    HTTP_STATUS_CODE_TO_DESC,
+    HTTP_STATUS_CODE_TO_TYPE
+)
 
+from .http_status_type import HttpStatusType
 
 class InvalidHttpCode(Exception):
     pass
@@ -49,7 +51,7 @@ def http_status_dict(override_dict=None):
     Returns:
 
     """
-    dict_ = copy.deepcopy(http_status_codes)
+    dict_ = copy.deepcopy(HTTP_STATUS_CODE_TO_PHRASE)
 
     if override_dict and isinstance(override_dict, dict) and len(override_dict) > 0:
         for key, value in override_dict.items():
@@ -72,10 +74,10 @@ def http_status_code_to_desc(http_status_code):
 
     """
     validate_http_code(http_status_code)
-    if http_status_code not in http_status_codes:
+    if http_status_code not in HTTP_STATUS_CODE_TO_PHRASE:
         return http_status_code_to_type(http_status_code)
 
-    return http_status_desc[http_status_code]
+    return HTTP_STATUS_CODE_TO_DESC[http_status_code]
 
 
 def http_status_code_to_type(http_status_code):
@@ -90,7 +92,7 @@ def http_status_code_to_type(http_status_code):
     validate_http_code(http_status_code)
     http_status_code_base = int(http_status_code / 100) * 100
 
-    return http_status_types[http_status_code_base]
+    return HTTP_STATUS_CODE_TO_TYPE[http_status_code_base]
 
 
 def is_http_status_type(http_status_code, http_status_type):

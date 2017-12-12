@@ -2,10 +2,29 @@
 # -*- coding: utf-8 -*-
 #  @namespace pyhttpstatus_utils
 
-from .status_type import HttpStatusType
+import functools
+from http import HTTPStatus
+from .http_status_type import HttpStatusType
 
-# Names of HTTP status codes.
-name = {
+@functools.lru_cache()
+def create_http_status_dict():
+    http_status_dict = {}
+
+    for httpstatus in list(HTTPStatus):
+        code = int(httpstatus)
+        http_status_dict[code] = {
+            "code": code,
+            "name": httpstatus.name,
+            "phrase": httpstatus.phrase,
+            "description": httpstatus.description
+        }
+
+    return http_status_dict
+
+HTTP_STATUS_DICT = create_http_status_dict()
+
+# Phrases of HTTP status codes.
+HTTP_STATUS_CODE_TO_PHRASE = {
     # Informational.
     100: 'Continue',
     101: 'Switching Protocols',
@@ -90,7 +109,7 @@ name = {
 }
 
 # Descriptions of HTTP status codes.
-description = {
+HTTP_STATUS_CODE_TO_DESC = {
     # Informational.
     100: 'Continue with the request.',
     101: 'Server is switching to a different protocol.',
@@ -183,7 +202,7 @@ description = {
     511: 'The client needs to authenticate to gain network access.'
 }
 
-type = {
+HTTP_STATUS_CODE_TO_TYPE = {
     100: HttpStatusType.INFORMATIONAL,
     200: HttpStatusType.SUCCESSFUL,
     300: HttpStatusType.REDIRECTION,
