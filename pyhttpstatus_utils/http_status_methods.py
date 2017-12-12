@@ -7,13 +7,11 @@ HTTP Status Codes and Support Functions.
 
 import copy
 
-from .http_status_dicts import (
-    HTTP_STATUS_CODE_TO_PHRASE,
-    HTTP_STATUS_CODE_TO_DESC,
-    HTTP_STATUS_CODE_TO_TYPE
-)
+from .http_status_code_to_desc import HTTP_STATUS_CODE_TO_DESC
+from .http_status_code_to_phrase import HTTP_STATUS_CODE_TO_PHRASE
+from .http_status_code_to_type import HTTP_STATUS_CODE_TO_TYPE
+from .http_status_types import HttpStatusType
 
-from .http_status_type import HttpStatusType
 
 class InvalidHttpCode(Exception):
     pass
@@ -92,7 +90,7 @@ def http_status_code_to_type(http_status_code):
     validate_http_code(http_status_code)
     http_status_code_base = int(http_status_code / 100) * 100
 
-    return HTTP_STATUS_CODE_TO_TYPE[http_status_code_base]
+    return HTTP_STATUS_CODE_TO_TYPE[http_status_code_base].value
 
 
 def is_http_status_type(http_status_code, http_status_type):
@@ -119,4 +117,5 @@ def is_http_status_successful(http_status_code):
     Returns:
 
     """
-    return is_http_status_type(http_status_code=http_status_code, http_status_type=HttpStatusType.SUCCESSFUL)
+    return is_http_status_type(http_status_code=http_status_code, http_status_type=HttpStatusType.SUCCESSFUL.value)
+

@@ -146,6 +146,12 @@ dist: clean
 	$(PYTHON3) $(SETUP_FILE) sdist --format=gztar upload
 	ls -al ./dist/$(PACKAGE_PREFIX_WILDCARD)
 
+requirements: $(REQ_FILE)
+	@echo "======================================================"
+	@echo requirements
+	@echo "======================================================"
+	$(PIP3) install --upgrade -r $(REQ_FILE)
+
 tools-requirements: $(TOOLS_REQ_FILE)
 	@echo "======================================================"
 	@echo tools-requirements
@@ -200,7 +206,7 @@ run-example: local-dev
 	@echo "======================================================"
 	@echo run-example
 	@echo "======================================================"
-	$(PYTHON3) examples/example_http_status_dict.py
+	$(PYTHON3) examples/example_http_status.py
 	@echo "======================================================"
 	$(PYTHON3) examples/example_http_status_code_all.py
 	@echo "======================================================"
@@ -208,7 +214,11 @@ run-example: local-dev
 	@echo "======================================================"
 	$(PYTHON3) examples/example_http_status_code_to_type.py
 	@echo "======================================================"
+	$(PYTHON3) examples/example_http_status_dict.py
+	@echo "======================================================"
 	$(PYTHON3) examples/example_http_status_type.py
+	@echo "======================================================"
+	$(PYTHON3) examples/example_is_http_status_type.py
 	@echo "======================================================"
 
 test: local-dev
