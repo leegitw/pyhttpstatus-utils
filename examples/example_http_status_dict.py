@@ -6,7 +6,11 @@ from pprintpp import pprint
 from collections import defaultdict
 import pyhttpstatus_utils
 
-__all__ = pyhttpstatus_utils.http_status_dict()
+import os
+_, tail = os.path.split(__file__)
+pprint(tail)
+
+__all__ = pyhttpstatus_utils.create_http_status_dict()
 _HTTP_STATUS_DICT = defaultdict(lambda: 'Partner returned non-200 status code.', __all__)
 
 for status_code in __all__:

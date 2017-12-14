@@ -5,6 +5,10 @@
 from pprintpp import pprint
 import pyhttpstatus_utils
 
+import os
+_, tail = os.path.split(__file__)
+pprint(tail)
+
 _HTTP_STATUS_CODES_RETRY = [
     pyhttpstatus_utils.HttpStatusCode.BAD_GATEWAY,
     pyhttpstatus_utils.HttpStatusCode.SERVICE_UNAVAILABLE,

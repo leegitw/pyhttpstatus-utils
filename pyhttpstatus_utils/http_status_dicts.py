@@ -7,7 +7,7 @@ from http import HTTPStatus
 from .http_status_type import HttpStatusType
 
 @functools.lru_cache()
-def create_http_status_dict():
+def _create_http_status_dict():
     http_status_dict = {}
 
     for httpstatus in list(HTTPStatus):
@@ -21,10 +21,10 @@ def create_http_status_dict():
 
     return http_status_dict
 
-HTTP_STATUS_DICT = create_http_status_dict()
+HTTP_STATUS_DICT = _create_http_status_dict()
 
 # Phrases of HTTP status codes.
-HTTP_STATUS_CODE_TO_PHRASE = {
+HTTP_STATUS_PHRASE_DICT = {
     # Informational.
     100: 'Continue',
     101: 'Switching Protocols',
@@ -109,7 +109,7 @@ HTTP_STATUS_CODE_TO_PHRASE = {
 }
 
 # Descriptions of HTTP status codes.
-HTTP_STATUS_CODE_TO_DESC = {
+HTTP_STATUS_DESC_DICT = {
     # Informational.
     100: 'Continue with the request.',
     101: 'Server is switching to a different protocol.',
@@ -202,7 +202,7 @@ HTTP_STATUS_CODE_TO_DESC = {
     511: 'The client needs to authenticate to gain network access.'
 }
 
-HTTP_STATUS_CODE_TO_TYPE = {
+HTTP_STATUS_TYPE_DICT = {
     100: HttpStatusType.INFORMATIONAL,
     200: HttpStatusType.SUCCESSFUL,
     300: HttpStatusType.REDIRECTION,

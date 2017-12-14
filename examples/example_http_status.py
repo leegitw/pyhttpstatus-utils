@@ -2,15 +2,17 @@
 # -*- coding: utf-8 -*-
 #  @copyright 2016 TUNE, Inc. (http://www.tune.com)
 
+
 from collections import defaultdict
-
 from pprintpp import pprint
-
 import pyhttpstatus_utils
 
+import os
+_, tail = os.path.split(__file__)
+pprint(tail)
 
 _http_status_dict = defaultdict(
-    lambda: 'partner returned non-200 status code', pyhttpstatus_utils.http_status_dict({
+    lambda: 'partner returned non-200 status code', pyhttpstatus_utils.create_http_status_dict({
         401: 'Invalid api_key'
     })
 )

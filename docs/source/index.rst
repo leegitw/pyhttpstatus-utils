@@ -81,7 +81,7 @@ Functions
 ---------
 
 - ``http_status_dict(override_dict=None)``: HTTP Status Dictionary with Overrides if provided.
-- ``http_status_code_to_desc(http_status_code)``: Get HTTP status code description.
+- ``get_http_status_desc(http_status_code)``: Get HTTP status code description.
 - ``http_status_code_to_type(http_status_code)``: Get HTTP Status Code Type.
 - ``is_http_status_type(http_status_code)``: Match if provided HTTP Status Code is expected HTTP Status Code Type.
 - ``is_http_status_successful(http_status_code)``: Check if HTTP Status Code is type Successful

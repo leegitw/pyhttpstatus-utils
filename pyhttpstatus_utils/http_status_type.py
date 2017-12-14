@@ -6,7 +6,7 @@ HTTP Status Types
 """
 import enum
 
-class HttpStatusType(enum.Enum):
+class HttpStatusType(object):
     """HTTP Status Name to Types
     """
 
@@ -17,7 +17,7 @@ class HttpStatusType(enum.Enum):
     SERVER_ERROR = 'Server Error'
 
 
-class HttpStatusCodeType(enum.IntEnum):
+class HttpStatusCodeType(object):
     """HTTP Status Code to Types
     """
 
@@ -26,4 +26,3 @@ class HttpStatusCodeType(enum.IntEnum):
     REDIRECTION = 300
     CLIENT_ERROR = 400
     SERVER_ERROR = 500
-

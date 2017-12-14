@@ -200,18 +200,18 @@ run-example: local-dev
 	@echo "======================================================"
 	@echo run-example
 	@echo "======================================================"
-	$(PYTHON3) examples/example_http_status_dict.py
-	@echo "======================================================"
-	$(PYTHON3) examples/example_http_status_code_all.py
+	$(PYTHON3) examples/example_http_status.py
 	@echo "======================================================"
 	$(PYTHON3) examples/example_http_status_code_list.py
 	@echo "======================================================"
 	$(PYTHON3) examples/example_http_status_code_to_type.py
 	@echo "======================================================"
-	$(PYTHON3) examples/example_http_status_type.py
+	$(PYTHON3) examples/example_http_status_dict.py
+	@echo "======================================================"
+	$(PYTHON3) examples/example_is_http_status_type.py
 	@echo "======================================================"
 
-test: local-dev
+test:
 	@echo "======================================================"
 	@echo py.test tests
 	@echo "======================================================"

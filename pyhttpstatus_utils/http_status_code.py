@@ -6,7 +6,7 @@ HTTP Status Codes
 """
 import enum
 
-class HttpStatusCode(enum.IntEnum):
+class HttpStatusCode(object):
     """HTTP Status Codes
     """
 
