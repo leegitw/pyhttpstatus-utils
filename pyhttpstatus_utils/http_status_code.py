@@ -4,7 +4,6 @@
 """
 HTTP Status Codes
 """
-import enum
 
 class HttpStatusCode(object):
     """HTTP Status Codes

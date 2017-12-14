@@ -17,7 +17,7 @@ class HttpStatusType(object):
     SERVER_ERROR = 'Server Error'
 
 
-class HttpStatusCodeType(object):
+class HttpStatusCodeType(enum.IntEnum):
     """HTTP Status Code to Types
     """
 
