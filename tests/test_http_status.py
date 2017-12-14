@@ -66,15 +66,14 @@ class TestHttpStatus():
 
     def test_is_http_status_type(self):
         __all_http_status_codes__ = list(map(int, http.HTTPStatus))
-
         for http_status_code in __all_http_status_codes__:
-            for _, http_status_type_value in pyhttpstatus_utils.HTTP_STATUS_TYPE_DICT.items():
-                http_status_success = pyhttpstatus_utils.is_http_status_type(
-                    http_status_code=http_status_code,
-                    http_status_type=http_status_type_value
-                )
+            http_status_type = pyhttpstatus_utils.get_http_status_type(http_status_code)
+            if pyhttpstatus_utils.is_http_status_successful(http_status_code):
+                assert(http_status_type == pyhttpstatus_utils.HttpStatusType.SUCCESSFUL)
+            else:
+                assert(http_status_type != pyhttpstatus_utils.HttpStatusType.SUCCESSFUL)
 
-                assert(type(http_status_success) is bool)
+            assert(pyhttpstatus_utils.is_http_status_type(http_status_code, http_status_type))
 
     def test_http_status_codes_list(self):
         _http_status_codes_list = [
