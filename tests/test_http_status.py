@@ -60,9 +60,9 @@ class TestHttpStatus():
             assert(type(pyhttpstatus_utils.is_http_status_successful(http_status_code)) is bool)
 
             if pyhttpstatus_utils.is_http_status_successful(http_status_code):
-                assert(pyhttpstatus_utils.http_status_code_to_type(http_status_code) == pyhttpstatus_utils.HttpStatusType.SUCCESSFUL.value)
+                assert(pyhttpstatus_utils.http_status_code_to_type(http_status_code) == pyhttpstatus_utils.HttpStatusType.SUCCESSFUL)
             else:
-                assert(pyhttpstatus_utils.http_status_code_to_type(http_status_code) != pyhttpstatus_utils.HttpStatusType.SUCCESSFUL.value)
+                assert(pyhttpstatus_utils.http_status_code_to_type(http_status_code) != pyhttpstatus_utils.HttpStatusType.SUCCESSFUL)
 
     def test_is_http_status_type(self):
         __all_http_status_code__ = list(map(int, pyhttpstatus_utils.HttpStatusCode))

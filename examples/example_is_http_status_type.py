@@ -15,7 +15,7 @@ for http_status_code in __all_http_status_code__:
             http_status_type=http_status_type
         )
         pprint(
-            "{}: {}: '{}': {}".format(
+            "{}:{}:'{}':{}".format(
                 http_status_code,
                 http_status_type.name,
                 http_status_type.value,

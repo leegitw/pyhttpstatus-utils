@@ -81,8 +81,8 @@ Functions
 - ``validate_http_code(http_code, minimum=100, maximum=599, strict=True, default_http_code=0)``: Validate HTTP code. If strict, throw, else just return default_http_code.
 
 
-class HttpStatusType
---------------------
+HTTP Status Code Types
+^^^^^^^^^^^^^^^^^^^^^^
 
 - 100: HttpStatusType.INFORMATIONAL,
 - 200: HttpStatusType.SUCCESSFUL,
@@ -111,6 +111,6 @@ or
 
 
 Dependencies
-------------
+^^^^^^^^^^^^
 
-- `aenum <https://pypi.python.org/pypi/aenum>`_
+- `wheel <https://pypi.python.org/pypi/wheel>`_
