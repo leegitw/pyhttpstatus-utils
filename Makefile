@@ -27,10 +27,11 @@ PACKAGE_ALL_FILES := $(shell find $(PACKAGE_PREFIX) tests examples -type f -name
 PACKAGE_EXAMPLE_FILES := $(shell find examples ! -name '__init__.py' -type f -name "*.py")
 PYFLAKES_ALL_FILES := $(shell find $(PACKAGE_PREFIX) tests examples -type f  -name '*.py' ! '(' -name '__init__.py' ')')
 
+REQ_FILE := requirements.txt
 TOOLS_REQ_FILE := requirements-tools.txt
-REQ_FILE      := requirements.txt
-SETUP_FILE    := setup.py
-ALL_FILES     := $(PACKAGE_FILES) $(REQ_FILE) $(SETUP_FILE)
+
+SETUP_FILE := setup.py
+ALL_FILES := $(PACKAGE_FILES) $(REQ_FILE) $(SETUP_FILE)
 
 # Report the current package version.
 version:
@@ -145,6 +146,12 @@ dist: clean
 	$(PYTHON3) $(SETUP_FILE) bdist_egg upload
 	$(PYTHON3) $(SETUP_FILE) sdist --format=gztar upload
 	ls -al ./dist/$(PACKAGE_PREFIX_WILDCARD)
+
+requirements: $(REQ_FILE)
+	@echo "======================================================"
+	@echo requirements
+	@echo "======================================================"
+	$(PIP3) install --upgrade -r $(REQ_FILE)
 
 tools-requirements: $(TOOLS_REQ_FILE)
 	@echo "======================================================"

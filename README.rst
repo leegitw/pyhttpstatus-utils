@@ -82,7 +82,7 @@ Functions
 
 
 HTTP Status Code Types
-^^^^^^^^^^^^^^^^^^^^^^
+----------------------
 
 - 100: HttpStatusType.INFORMATIONAL,
 - 200: HttpStatusType.SUCCESSFUL,
@@ -109,8 +109,3 @@ or
     python3 -m pip uninstall --yes --no-input -r requirements.txt
     python3 -m pip install --upgrade -r requirements.txt
 
-
-Dependencies
-^^^^^^^^^^^^
-
-- `wheel <https://pypi.python.org/pypi/wheel>`_
