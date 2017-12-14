@@ -78,7 +78,6 @@ Functions
 - ``get_http_status_name(http_status_code)``: Get HTTP status code name.
 - ``get_http_status_phrase(http_status_code)``: Get HTTP status code phrase.
 - ``get_http_status_type(http_status_code)``: Get HTTP status code type.
-- ``http_status_code_to_type(http_status_code)``: Get HTTP Status Code Type.
 - ``is_http_status_successful(http_status_code)``: Check if HTTP Status Code is type Successful
 - ``is_http_status_type(http_status_code)``: Match if provided HTTP Status Code is expected HTTP Status Code Type.
 - ``validate_http_code(http_code, minimum=100, maximum=599, strict=True, default_http_code=0)``: Validate HTTP code. If strict, throw, else just return default_http_code.
