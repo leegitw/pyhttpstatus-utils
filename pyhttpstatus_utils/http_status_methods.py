@@ -7,11 +7,14 @@ HTTP Status Codes and Support Functions.
 
 import copy
 
-from .http_status_code_to_desc import HTTP_STATUS_CODE_TO_DESC
-from .http_status_code_to_phrase import HTTP_STATUS_CODE_TO_PHRASE
-from .http_status_code_to_type import HTTP_STATUS_CODE_TO_TYPE
-from .http_status_types import HttpStatusType
+from .http_status_dicts import (
+    HTTP_STATUS_PHRASE_DICT,
+    HTTP_STATUS_DESC_DICT,
+    HTTP_STATUS_DICT,
+    HTTP_STATUS_TYPE_DICT
+)
 
+from .http_status_type import HttpStatusType
 
 class InvalidHttpCode(Exception):
     pass
@@ -40,7 +43,7 @@ def validate_http_code(http_code, minimum=100, maximum=599, strict=True, default
     return http_code
 
 
-def http_status_dict(override_dict=None):
+def create_http_status_dict(override_dict=None):
     """HTTP Status Dictionary with Overrides if provided.
 
     Args:
@@ -49,7 +52,7 @@ def http_status_dict(override_dict=None):
     Returns:
 
     """
-    dict_ = copy.deepcopy(HTTP_STATUS_CODE_TO_PHRASE)
+    dict_ = copy.deepcopy(HTTP_STATUS_PHRASE_DICT)
 
     if override_dict and isinstance(override_dict, dict) and len(override_dict) > 0:
         for key, value in override_dict.items():
@@ -61,8 +64,7 @@ def http_status_dict(override_dict=None):
 
     return dict_
 
-
-def http_status_code_to_desc(http_status_code):
+def get_http_status_name(http_status_code):
     """Get HTTP status code description.
 
     Args:
@@ -72,13 +74,51 @@ def http_status_code_to_desc(http_status_code):
 
     """
     validate_http_code(http_status_code)
-    if http_status_code not in HTTP_STATUS_CODE_TO_PHRASE:
-        return http_status_code_to_type(http_status_code)
+    if http_status_code not in HTTP_STATUS_DICT:
+        return None
 
-    return HTTP_STATUS_CODE_TO_DESC[http_status_code]
+    return HTTP_STATUS_DICT[http_status_code]['name']
 
 
-def http_status_code_to_type(http_status_code):
+def get_http_status_phrase(http_status_code):
+    """Get HTTP status code phrase.
+
+    Args:
+        http_status_code:
+
+    Returns:
+
+    """
+    validate_http_code(http_status_code)
+    if http_status_code not in HTTP_STATUS_PHRASE_DICT:
+        if http_status_code not in HTTP_STATUS_DICT:
+            return get_http_status_type(http_status_code)
+
+        return HTTP_STATUS_DICT[http_status_code]['phrase']
+
+    return HTTP_STATUS_PHRASE_DICT[http_status_code]
+
+
+def get_http_status_desc(http_status_code):
+    """Get HTTP status code description.
+
+    Args:
+        http_status_code:
+
+    Returns:
+
+    """
+    validate_http_code(http_status_code)
+    if http_status_code not in HTTP_STATUS_DESC_DICT:
+        if http_status_code not in HTTP_STATUS_DICT:
+            return get_http_status_type(http_status_code)
+
+        return HTTP_STATUS_DICT[http_status_code]['description']
+
+    return HTTP_STATUS_DESC_DICT[http_status_code]
+
+
+def get_http_status_type(http_status_code):
     """Get HTTP Status Code Type
 
     Args:
@@ -90,7 +130,7 @@ def http_status_code_to_type(http_status_code):
     validate_http_code(http_status_code)
     http_status_code_base = int(http_status_code / 100) * 100
 
-    return HTTP_STATUS_CODE_TO_TYPE[http_status_code_base].value
+    return HTTP_STATUS_TYPE_DICT[http_status_code_base]
 
 
 def is_http_status_type(http_status_code, http_status_type):
@@ -104,7 +144,7 @@ def is_http_status_type(http_status_code, http_status_type):
     Returns:
 
     """
-    return http_status_code_to_type(http_status_code) == http_status_type
+    return get_http_status_type(http_status_code) == http_status_type
 
 
 def is_http_status_successful(http_status_code):
@@ -117,5 +157,4 @@ def is_http_status_successful(http_status_code):
     Returns:
 
     """
-    return is_http_status_type(http_status_code=http_status_code, http_status_type=HttpStatusType.SUCCESSFUL.value)
-
+    return is_http_status_type(http_status_code=http_status_code, http_status_type=HttpStatusType.SUCCESSFUL)

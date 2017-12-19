@@ -73,16 +73,32 @@ Install
 Functions
 ---------
 
-- ``http_status_dict(override_dict=None)``: HTTP Status Dictionary with Overrides if provided.
-- ``http_status_code_to_desc(http_status_code)``: Get HTTP status code description.
-- ``http_status_code_to_type(http_status_code)``: Get HTTP Status Code Type.
-- ``is_http_status_type(http_status_code)``: Match if provided HTTP Status Code is expected HTTP Status Code Type.
+- ``create_http_status_dict(override_dict=None)``: Create HTTP Status Dictionary with Overrides if provided.
+- ``get_http_status_desc(http_status_code)``: Get HTTP status code description.
+- ``get_http_status_name(http_status_code)``: Get HTTP status code name.
+- ``get_http_status_phrase(http_status_code)``: Get HTTP status code phrase.
+- ``get_http_status_type(http_status_code)``: Get HTTP status code type.
 - ``is_http_status_successful(http_status_code)``: Check if HTTP Status Code is type Successful
+- ``is_http_status_type(http_status_code)``: Match if provided HTTP Status Code is expected HTTP Status Code Type.
 - ``validate_http_code(http_code, minimum=100, maximum=599, strict=True, default_http_code=0)``: Validate HTTP code. If strict, throw, else just return default_http_code.
 
+Dictionaries
+------------
 
-class HttpStatusType
---------------------
+- ``HTTP_STATUS_DICT``: Extracted from ``http.HTTPStatus``, a dictionary of each HTTP Status' name, code, phrase, and description.
+- ``HTTP_STATUS_PHRASE_DICT``: Phrases of HTTP status codes.
+- ``HTTP_STATUS_DESC_DICT``: Description of HTTP status codes.
+- ``HTTP_STATUS_TYPE_DICT``: Types of HTTP status codes.
+
+Enum Classes
+------------
+
+- ``HttpStatusCode``: Static enumeration of HTTP status mapping names to codes
+- ``HttpStatusType``: Static enumeration of HTTP status mapping types to phrase
+- ``HttpStatusCodeType``: Int enumeration of HTTP status mapping types to codes
+
+HTTP Status Code Types
+----------------------
 
 - 100: HttpStatusType.INFORMATIONAL,
 - 200: HttpStatusType.SUCCESSFUL,
@@ -103,14 +119,8 @@ several Python modules available within `Python Package Index PyPI <https://pypi
 
 or
 
-
 .. code-block:: bash
 
     python3 -m pip uninstall --yes --no-input -r requirements.txt
     python3 -m pip install --upgrade -r requirements.txt
 
-
-Dependencies
-------------
-
-- `aenum <https://pypi.python.org/pypi/aenum>`_

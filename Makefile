@@ -27,10 +27,11 @@ PACKAGE_ALL_FILES := $(shell find $(PACKAGE_PREFIX) tests examples -type f -name
 PACKAGE_EXAMPLE_FILES := $(shell find examples ! -name '__init__.py' -type f -name "*.py")
 PYFLAKES_ALL_FILES := $(shell find $(PACKAGE_PREFIX) tests examples -type f  -name '*.py' ! '(' -name '__init__.py' ')')
 
+REQ_FILE := requirements.txt
 TOOLS_REQ_FILE := requirements-tools.txt
-REQ_FILE      := requirements.txt
-SETUP_FILE    := setup.py
-ALL_FILES     := $(PACKAGE_FILES) $(REQ_FILE) $(SETUP_FILE)
+
+SETUP_FILE := setup.py
+ALL_FILES := $(PACKAGE_FILES) $(REQ_FILE) $(SETUP_FILE)
 
 # Report the current package version.
 version:
@@ -208,20 +209,16 @@ run-example: local-dev
 	@echo "======================================================"
 	$(PYTHON3) examples/example_http_status.py
 	@echo "======================================================"
-	$(PYTHON3) examples/example_http_status_code_all.py
-	@echo "======================================================"
 	$(PYTHON3) examples/example_http_status_code_list.py
 	@echo "======================================================"
 	$(PYTHON3) examples/example_http_status_code_to_type.py
 	@echo "======================================================"
 	$(PYTHON3) examples/example_http_status_dict.py
 	@echo "======================================================"
-	$(PYTHON3) examples/example_http_status_type.py
-	@echo "======================================================"
 	$(PYTHON3) examples/example_is_http_status_type.py
 	@echo "======================================================"
 
-test: local-dev
+test:
 	@echo "======================================================"
 	@echo py.test tests
 	@echo "======================================================"
