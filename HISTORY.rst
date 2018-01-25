@@ -6,6 +6,7 @@ Release History
 0.3.1 (2018-01-25)
 ------------------
 - migrate to github/tuneinc.
+- LICENSE: MIT
 
 0.2.2 (2017-12-10)
 ------------------
