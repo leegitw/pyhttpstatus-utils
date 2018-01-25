@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+#  @copyright 2018 TUNE, Inc. (http://www.tune.com)
 #  @namespace pyhttpstatus_utils
 
 __title__ = 'pyhttpstatus-utils'
-__version__ = '0.3.0'
+__version__ = '0.3.1'
 __version_info__ = tuple(__version__.split('.'))
 
 __author__ = 'jefft@tune.com'
