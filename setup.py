@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #  @namespace pyhttpstatus-utils
 #
-#    Copyright (c) 2017 TUNE, Inc.
+#    Copyright (c) 2018 TUNE, Inc.
 #    All rights reserved.
 #
 
@@ -72,11 +72,11 @@ setup(
     version=version,
     description='Extension of Python Standard Library http.HTTPStatus providing addtional utilities.',
     long_description=readme + '\n\n' + history,
-    author='TUNE Inc., TuneLab',
+    author='TUNE Inc.',
     author_email='jefft@tune.com',
-    url='https://github.com/TuneLab/pyhttpstatus-utils',
-    download_url='https://github.com/TuneLab/pyhttpstatus-utils/archive/v{0}.tar.gz'.format(version),
-    keywords="http httpstatus utilities tune multiverse",
+    url='https://github.com/tuneinc/pyhttpstatus-utils',
+    download_url='https://github.com/tuneinc/pyhttpstatus-utils/archive/v{0}.tar.gz'.format(version),
+    keywords="http httpstatus utilities tune",
     license='MIT License',
     zip_safe=False,
     install_requires=REQUIREMENTS,
