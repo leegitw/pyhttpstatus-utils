@@ -35,25 +35,25 @@ Badges
     :alt: Documentation Status
     :target: http://pyhttpstatus-utils.readthedocs.io
 
-.. |hits| image:: http://hits.dwyl.io/tuneinc/pyhttpstatus-utils.svg
+.. |hits| image:: http://hits.dwyl.io/TuneLab/pyhttpstatus-utils.svg
     :alt: Hit Count
-    :target: http://hits.dwyl.io/tuneinc/pyhttpstatus-utils
+    :target: http://hits.dwyl.io/TuneLab/pyhttpstatus-utils
 
-.. |contributors| image:: https://img.shields.io/github/contributors/tuneinc/pyhttpstatus-utils.svg
+.. |contributors| image:: https://img.shields.io/github/contributors/TuneLab/pyhttpstatus-utils.svg
     :alt: Contributors
-    :target: https://github.com/tuneinc/pyhttpstatus-utils/graphs/contributors
+    :target: https://github.com/TuneLab/pyhttpstatus-utils/graphs/contributors
 
 .. |license| image:: https://img.shields.io/badge/License-MIT-yellow.svg
     :alt: License Status
     :target: https://opensource.org/licenses/MIT
 
-.. |travis| image:: https://travis-ci.org/tuneinc/pyhttpstatus-utils.svg?branch=master
+.. |travis| image:: https://travis-ci.org/TuneLab/pyhttpstatus-utils.svg?branch=master
     :alt: Travis-CI Build Status
-    :target: https://travis-ci.org/tuneinc/pyhttpstatus-utils
+    :target: https://travis-ci.org/TuneLab/pyhttpstatus-utils
 
-.. |coveralls| image:: https://coveralls.io/repos/tuneinc/pyhttpstatus-utils/badge.svg?branch=master&service=github
+.. |coveralls| image:: https://coveralls.io/repos/TuneLab/pyhttpstatus-utils/badge.svg?branch=master&service=github
     :alt: Code Coverage Status
-    :target: https://coveralls.io/r/tuneinc/pyhttpstatus-utils
+    :target: https://coveralls.io/r/TuneLab/pyhttpstatus-utils
 
 .. |version| image:: https://img.shields.io/pypi/v/pyhttpstatus-utils.svg?style=flat
     :alt: PyPI Package latest release
@@ -63,9 +63,9 @@ Badges
     :alt: Supported versions
     :target: https://pypi.python.org/pypi/pyhttpstatus-utils
 
-.. |requires| image:: https://requires.io/github/tuneinc/pyhttpstatus-utils/requirements.svg?branch=master
+.. |requires| image:: https://requires.io/github/TuneLab/pyhttpstatus-utils/requirements.svg?branch=master
     :alt: Requirements Status
-    :target: https://requires.io/github/tuneinc/pyhttpstatus-utils/requirements/?branch=master
+    :target: https://requires.io/github/TuneLab/pyhttpstatus-utils/requirements/?branch=master
 
 .. end-badges
 

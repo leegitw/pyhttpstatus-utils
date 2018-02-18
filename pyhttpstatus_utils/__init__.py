@@ -4,7 +4,7 @@
 #  @namespace pyhttpstatus_utils
 
 __title__ = 'pyhttpstatus-utils'
-__version__ = '0.3.1'
+__version__ = '0.3.2'
 __version_info__ = tuple(__version__.split('.'))
 
 __author__ = 'jefft@tune.com'
