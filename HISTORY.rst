@@ -3,6 +3,12 @@
 Release History
 ===============
 
+0.3.3 (2018-02-20)
+------------------
+- Python 2.7 supported
+- Travis CI testing both Python 2.7 and 3.6.
+- Backport Python 3.6 http.HttpStatus for support in Python 2.7 to Python 3.4.
+
 0.3.2 (2018-02-16)
 ------------------
 - migrate to github/TuneLab

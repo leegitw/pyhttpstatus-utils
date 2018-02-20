@@ -2,9 +2,15 @@
 # -*- coding: utf-8 -*-
 #  @copyright 2017 TUNE, Inc. (http://www.tune.com)
 
+import sys
 from collections import defaultdict
-import http
+
 import pyhttpstatus_utils
+
+if (sys.version_info[0] < 3) or (sys.version_info[0] == 3 and sys.version_info[2] < 5):
+    from pyhttpstatus_utils import HTTPStatus
+else:
+    from http import HTTPStatus
 
 class TestHttpStatus():
 
@@ -41,7 +47,7 @@ class TestHttpStatus():
             assert(type(pyhttpstatus_utils.HTTP_STATUS_PHRASE_DICT[key]) is str)
 
     def test_http_status(self):
-        for httpstatus in list(http.HTTPStatus):
+        for httpstatus in list(HTTPStatus):
             assert(type(int(httpstatus)) is int)
             assert(type(httpstatus.name) is str)
             assert(type(httpstatus.phrase) is str)
@@ -51,7 +57,7 @@ class TestHttpStatus():
         assert(pyhttpstatus_utils.is_http_status_successful(200))
 
     def test_http_status_code_to_type(self):
-        __all_http_status_codes__ = list(map(int, http.HTTPStatus))
+        __all_http_status_codes__ = list(map(int, HTTPStatus))
 
         for http_status_code in __all_http_status_codes__:
             assert(pyhttpstatus_utils.get_http_status_type(http_status_code))
@@ -65,7 +71,7 @@ class TestHttpStatus():
                     http_status_code) != pyhttpstatus_utils.HttpStatusType.SUCCESSFUL)
 
     def test_is_http_status_type(self):
-        __all_http_status_codes__ = list(map(int, http.HTTPStatus))
+        __all_http_status_codes__ = list(map(int, HTTPStatus))
         for http_status_code in __all_http_status_codes__:
             http_status_type = pyhttpstatus_utils.get_http_status_type(http_status_code)
             if pyhttpstatus_utils.is_http_status_successful(http_status_code):
