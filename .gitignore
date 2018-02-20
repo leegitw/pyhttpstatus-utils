@@ -25,9 +25,10 @@ _tmp/
 
 
 # pytest
-.cache/*
+/.cache/*
 /htmlcov/
 /.coverage
+/.pytest_cache/
 
 # distribution
 .eggs/*
